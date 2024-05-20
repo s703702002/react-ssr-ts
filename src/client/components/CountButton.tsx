@@ -1,10 +1,14 @@
 import { useState } from "react";
+import styles from "./CountButton.module.css";
 
 const CountButton = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <button onClick={() => setCount((count) => count + 1)}>
+    <button
+      className={styles.root}
+      onClick={() => setCount((count) => count + 1)}
+    >
       count is {count}
     </button>
   );

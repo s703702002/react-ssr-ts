@@ -1,7 +1,7 @@
-import ReactLink from "./ReactLink";
-import ViteLink from "./ViteLink";
+import ReactLink from "@components/ReactLink";
+import ViteLink from "@components/ViteLink";
+import CountButton from "@components/CountButton";
 import "./App.css";
-import CountButton from "./CountButton";
 
 function App() {
   return (
