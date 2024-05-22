@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./CountButton.module.css";
+import styles from "./count-button.module.css";
 
 const CountButton = () => {
   const [count, setCount] = useState(0);

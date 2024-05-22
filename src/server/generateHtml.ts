@@ -13,13 +13,6 @@ const generateHtml = async (viteServer: ViteDevServer | null) => {
     ? await fs.readFile(path.resolve(cwd, "./dist/client/index.html"), "utf-8")
     : "";
 
-  const ssrManifest = isProduction
-    ? await fs.readFile(
-        path.resolve(cwd, "./dist/client/.vite/ssr-manifest.json"),
-        "utf-8",
-      )
-    : undefined;
-
   return async (req: Request, res: Response) => {
     try {
       const url = req.originalUrl.replace(base, "");
@@ -43,7 +36,7 @@ const generateHtml = async (viteServer: ViteDevServer | null) => {
           .render;
       }
 
-      const rendered = await render(url, ssrManifest);
+      const rendered = await render(req, res);
 
       const html = template
         .replace(`<!--app-head-->`, rendered.head ?? "")
