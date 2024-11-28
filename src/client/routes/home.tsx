@@ -29,6 +29,7 @@ function Home() {
       <p>Loader Data</p>
       <p>Loader Data!!</p>
       <Button>Default Button</Button>
+      <Button>Default Button2 from antd-2</Button>
       <ul>{data.products?.map((p) => <li key={p.id}>{p.content}</li>)}</ul>
     </div>
   );
