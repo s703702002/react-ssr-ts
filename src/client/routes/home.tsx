@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { Button } from "antd";
 
 type ProductData = {
   id: string;
@@ -26,6 +27,7 @@ function Home() {
     <div>
       <h2>Home</h2>
       <p>Loader Data</p>
+      <Button>Default Button</Button>
       <ul>{data.products?.map((p) => <li key={p.id}>{p.content}</li>)}</ul>
     </div>
   );
